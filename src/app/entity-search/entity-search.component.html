@@ -1,0 +1,9 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+ 
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <li *ngFor="let employee of employees$ | async" >
+    {{employee.name}}
+  </li>
+  
+</div>

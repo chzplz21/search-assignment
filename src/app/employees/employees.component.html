@@ -1,0 +1,13 @@
+
+<h2>Employees</h2>
+<ul class="employees">
+  <li *ngFor="let employee of employees">
+    {{employee.name}}
+    <ul *ngFor="let company of employee.company_array">{{company.name}}</ul>
+ 
+  </li>
+ 
+   
+
+
+</ul>
