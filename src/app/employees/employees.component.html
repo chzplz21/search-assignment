@@ -1,13 +1,12 @@
 
 <h2>Employees</h2>
 <ul class="employees">
-  <li *ngFor="let employee of employees">
+  <li *ngFor="let employee of employees" (click)="onSelect(employee)">
     {{employee.name}}
-    <ul *ngFor="let company of employee.company_array">{{company.name}}</ul>
+    <!---<ul *ngFor="let company of employee.company_array">{{company.name}}</ul>-->
  
   </li>
  
-   
-
-
 </ul>
+
+<app-employee-detail [selectedEmployee]="selectedEmployee"></app-employee-detail>

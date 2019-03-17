@@ -1,4 +1,8 @@
 export class Employee {
-    id: number;
     name: string;
+    id: number;
+    type: string;
+    position: string;
+    company_array: 
+
   }

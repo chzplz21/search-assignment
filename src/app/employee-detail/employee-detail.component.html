@@ -1,0 +1,9 @@
+
+<div *ngIf="selectedEmployee">
+    <h2>Details</h2>
+    {{selectedEmployee.name}}
+    {{selectedEmployee.position}}
+    <ul *ngFor="let details of selectedEmployee.company_array">
+        {{details.name}}
+    </ul>
+  </div>

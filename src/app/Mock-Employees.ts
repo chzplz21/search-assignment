@@ -18,6 +18,26 @@ export const EMPLOYEES: Employee[] = [
           }
           
         ]
+    },
+    { 
+        "name":"Mary",
+        "id": 2,     
+        "type": "Employee", 
+        "position": "Manager",
+        "company_array": [
+          {
+              "name": "IBM",
+              "industry": "Tech"
+              
+          },
+              {
+              "name": "Apple",
+              "industry": "Tech"
+              
+          }
+          
+        ]
     }
+
   
 ];
