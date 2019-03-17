@@ -1,3 +1,4 @@
+/*
 export class Employee {
     name: string;
     id: number;
@@ -6,3 +7,4 @@ export class Employee {
     company_array: 
 
   }
+  */

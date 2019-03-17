@@ -2,8 +2,10 @@
   <h4>Hero Search</h4>
  
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-  <li *ngFor="let employee of employees$ | async" >
+  <li *ngFor="let employee of employees$ | async" (click)="onSelect(employee)" >
     {{employee.name}}
   </li>
   
 </div>
+
+<app-employee-detail [selectedEmployee]="selectedEmployee"></app-employee-detail>

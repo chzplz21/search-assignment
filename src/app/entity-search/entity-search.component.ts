@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
-
+import { Observable, Subject, of } from 'rxjs';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-entity-search',
@@ -20,6 +18,7 @@ export class EntitySearchComponent implements OnInit {
   employees$: Observable<Employee[]>;
   private searchTerms = new Subject<string>();
   private employeesURL = 'api/employees'; 
+  selectedEmployee: object;
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +30,6 @@ export class EntitySearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.employees$ = this.searchTerms.pipe(
-
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
       // ignore new term if same as previous term
@@ -48,10 +46,33 @@ export class EntitySearchComponent implements OnInit {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Employee[]>(this.employeesURL);
+    return this.http.get<Employee[]>(`${this.employeesURL}/?name=${term}`).pipe(
+      catchError(this.handleError<Hero[]>('getHeroes', []))
+    );
      
-    
+  }
 
+  //Handles selection of employee.
+  //selectedEmployee property imported into employee-detail
+  onSelect(employee: object): void {
+    this.selectedEmployee = employee;
+    
+   
+  }
+
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+   
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+   
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+   
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
 
