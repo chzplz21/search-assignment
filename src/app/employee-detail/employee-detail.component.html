@@ -1,5 +1,5 @@
 
-<div *ngIf="selectedEmployee">
+<div *ngIf="selectedEmployee" else elseBlock>
     <mat-card class = "blue">
      
             <div class = "personBox">
@@ -19,6 +19,11 @@
                 </ul>
             </div>
        
+    </mat-card>
+</div>
+<div elseblock>
+    <mat-card>
+        No Results Found Yet
     </mat-card>
 </div>
 
