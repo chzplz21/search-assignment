@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import {
@@ -8,6 +6,7 @@ import {
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Employee } from '../Employee';
 
 
 @Component({
@@ -53,7 +52,8 @@ export class EntitySearchComponent implements OnInit {
 
   //Handles selection of employee.
   //selectedEmployee property imported into employee-detail
-  onSelect(employee: object): void {
+  onSelect(employee: Employee): void {
+  
     this.selectedEmployee = employee;
     //sets input box value with selected name
     this.searchBox.nativeElement.value = employee.name;

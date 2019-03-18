@@ -1,29 +1,25 @@
 
-<div *ngIf="selectedEmployee" else elseBlock>
-    <mat-card class = "blue">
-     
-            <div class = "personBox">
-                <mat-icon>face</mat-icon><h3>Employee Details</h3>
-                <div><span >ID:</span> <b> {{selectedEmployee.id}}</b></div>
-                <div><span>Name:</span><b> {{selectedEmployee.name}}</b></div>
-                <div><span>Position:</span> <b> {{selectedEmployee.position}}</b></div>
-            </div>
+  
+<mat-card class = "blue">
+    <h2 class = "h2">Employee Details</h2>
+    <div *ngIf="selectedEmployee"> 
+        <div class = "personBox">
+            <mat-icon>face</mat-icon><h3>Personal Information</h3>
+            <div><span >ID:</span> <b> {{selectedEmployee.id}}</b></div>
+            <div><span>Name:</span><b> {{selectedEmployee.name}}</b></div>
+            <div><span>Position:</span> <b> {{selectedEmployee.position}}</b></div>
+        </div>
 
-            <div class = "personBox">
-                <mat-icon>business_center</mat-icon>  <h3>Companies Worked For</h3>
-                <ul class = "noMargin" *ngFor="let details of selectedEmployee.company_array">
-                   
-                    <div><span>Company Name:</span><b> {{details.name}}</b></div>
-                    <div><span>Industry:</span><b> {{details.industry}}</b></div>
-                    <hr>
-                </ul>
-            </div>
-       
-    </mat-card>
-</div>
-<div elseblock>
-    <mat-card>
-        No Results Found Yet
-    </mat-card>
-</div>
+        <div class = "personBox">
+            <mat-icon>business_center</mat-icon>  <h3>Companies Worked For</h3>
+            <ul class = "noMargin" *ngFor="let details of selectedEmployee.company_array">
+                
+                <div><span>Company Name:</span><b> {{details.name}}</b></div>
+                <div><span>Industry:</span><b> {{details.industry}}</b></div>
+                <hr>
+            </ul>
+        </div>
+    </div>
+</mat-card>
+
 
