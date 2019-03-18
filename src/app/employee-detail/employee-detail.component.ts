@@ -1,5 +1,4 @@
 import { Component, OnInit, Input  } from '@angular/core';
-//import { selectedEmployee } from '../employees/employees.component';
 
 
 @Component({
@@ -13,7 +12,8 @@ export class EmployeeDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit({
+
+  })
 
 }

@@ -1,0 +1,32 @@
+.blue {
+    font-size: 0;
+    color: #0074D9;
+} 
+
+.personBox {
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+    vertical-align: top;
+    
+}
+
+.innerDetail {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.noMargin {
+    padding-left: 0;
+}
+
+
+@media screen and (max-width: 650px) {
+    .personBox {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        
+    }
+  }

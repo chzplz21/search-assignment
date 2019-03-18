@@ -11,7 +11,6 @@ export class InMemoryDataService implements InMemoryDbService {
         { 
           "name":"Steve",
           "id": 1,     
-          "type": "Employee", 
           "position": "Engineer",
           "company_array": [
             {
@@ -29,8 +28,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       { 
           "name":"Mary",
-          "id": 2,     
-          "type": "Employee", 
+          "id": 2,      
           "position": "Manager",
           "company_array": [
             {
@@ -45,9 +43,46 @@ export class InMemoryDataService implements InMemoryDbService {
             }
             
           ]
-      }
+      },
+      { 
+        "name":"Eva",
+        "id": 3,     
+        "position": "Engineer",
+        "company_array": [
+          {
+              "name": "General Motors",
+              "industry": "Automobile"
+              
+          },
+              {
+              "name": "FedEx",
+              "industry": "Shipping"
+              
+          }
+          
+        ]
+    },
+    { 
+      "name":"Jim",
+      "id": 4,     
+      "position": "Manager",
+      "company_array": [
+        {
+            "name": "Taco Bell",
+            "industry": "Food"
+            
+        },
+            {
+            "name": "Applebees",
+            "industry": "Food"
+            
+        }
+        
+      ]
+  }
 
     ];
+   
     return {employees};
   
 

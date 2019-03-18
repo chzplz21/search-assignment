@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import {
   debounceTime, distinctUntilChanged, switchMap
@@ -19,12 +19,13 @@ export class EntitySearchComponent implements OnInit {
   private searchTerms = new Subject<string>();
   private employeesURL = 'api/employees'; 
   selectedEmployee: object;
+  @ViewChild('searchBox') private searchBox;
 
   constructor(private http: HttpClient) { }
 
   search(term: string): void {
-   // console.log(term);
     this.searchTerms.next(term);
+   
 
   }
 
@@ -37,6 +38,7 @@ export class EntitySearchComponent implements OnInit {
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.searchEntities(term)),
     );
+    
 
   }
 
@@ -44,6 +46,7 @@ export class EntitySearchComponent implements OnInit {
   searchEntities(term: string): Observable<Employee[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
+      this.selectedEmployee = false;
       return of([]);
     }
     return this.http.get<Employee[]>(`${this.employeesURL}/?name=${term}`).pipe(
@@ -56,7 +59,8 @@ export class EntitySearchComponent implements OnInit {
   //selectedEmployee property imported into employee-detail
   onSelect(employee: object): void {
     this.selectedEmployee = employee;
-    
+    //sets input box value with selected name
+    this.searchBox.nativeElement.value = employee.name;
    
   }
 
