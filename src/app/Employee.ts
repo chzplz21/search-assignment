@@ -3,6 +3,4 @@ export class Employee {
     id: number;
     position: string;
     company_array: [];
-
-
 }

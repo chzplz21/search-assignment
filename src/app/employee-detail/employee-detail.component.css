@@ -1,6 +1,6 @@
 .blue {
     font-size: 0;
-    color: #0074D9;
+    color: #2ECC40;
 } 
 
 .personBox {
@@ -24,6 +24,12 @@
 h2 {
     font-size: 20px;
 }
+
+.labelSpan, mat-icon {
+    color: #3F51B5;
+}
+
+
 
 
 @media screen and (max-width: 650px) {

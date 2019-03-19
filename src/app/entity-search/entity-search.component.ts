@@ -20,6 +20,7 @@ export class EntitySearchComponent implements OnInit {
   private searchTerms = new Subject<string>();
   private employeesURL = 'api/employees'; 
   selectedEmployee: object;
+  //DOM element searchBox
   @ViewChild('searchBox') private searchBox;
 
   constructor(private http: HttpClient) { }
@@ -46,6 +47,7 @@ export class EntitySearchComponent implements OnInit {
       this.selectedEmployee = null;
       return of([]);
     }
+    //Request to fake server
     return this.http.get<Employee[]>(`${this.employeesURL}/?name=${term}`).pipe();
      
   }

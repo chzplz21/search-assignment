@@ -50,6 +50,10 @@
 
   input {
     padding: 10px;
+    caret-color: #3F51B5;
   }
 
-  
+  /deep/ .mat-form-field-label { 
+    font-size: 20px !important;
+}
+

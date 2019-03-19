@@ -7,7 +7,7 @@ import { Component, OnInit, Input  } from '@angular/core';
   styleUrls: ['./employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
-
+  //selectedEmployee from entity-search component
   @Input('selectedEmployee') selectedEmployee:object;
 
   constructor() { }
