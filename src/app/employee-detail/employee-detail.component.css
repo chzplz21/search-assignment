@@ -3,9 +3,15 @@
     color: #2ECC40;
 } 
 
+.mainHolder {
+
+    border: solid blue;
+}
+
+
 .personBox {
-    display: inline-block;
-    width: 50%;
+    display: block;
+   
     font-size: 16px;
     vertical-align: top;
     
@@ -28,6 +34,7 @@ h2 {
 .labelSpan, mat-icon {
     color: #3F51B5;
 }
+
 
 
 

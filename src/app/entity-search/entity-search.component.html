@@ -5,11 +5,17 @@
       </mat-form-field>
 
       <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let employee of employees$ | async" (click)="onSelect(employee)" [class.selected]="employee === selectedEmployee" [value]="option">
-            {{employee.name}}
+          <mat-option *ngFor="let entity of matchedEntity$ | async" (click)="onSelect(entity)" [class.selected]="employee === selectedEmployee" [value]="option">
+            {{entity.name}}
           </mat-option>
       </mat-autocomplete>
   </div>
 </mat-card>
 
-<app-employee-detail [selectedEmployee]="selectedEmployee"></app-employee-detail>
+<div *ngFor="let single of matchedArray">
+        <app-employee-detail  [single] = "single"></app-employee-detail>            
+</div>
+
+<!--
+<app-employee-detail  [matchedArray]></app-employee-detail>
+-->
