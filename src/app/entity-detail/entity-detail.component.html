@@ -1,0 +1,48 @@
+
+
+<mat-card class = "blue">
+    <div *ngIf="single.type == 'Employee'; else elseBlock"   class = "mainHolder">
+            <div  class = "personBox">
+                <h2 class = "h2">Employee</h2>
+                <h3>Personal Information</h3>
+                <div><span class = "labelSpan">Name:</span><b> {{single.name}}</b></div>
+                <div><span class = "labelSpan">Position:</span> <b> {{single.position}}</b></div>
+            </div>
+            
+            <div class = "personBox">
+                 <h3>Companies Worked For</h3>
+                <ul class = "noMargin" *ngFor="let details of single.nested_array">
+                    <div><span class = "labelSpan">Company Name:</span><b> {{details.name}}</b></div>
+                    <div><span class = "labelSpan">Industry:</span><b> {{details.industry}}</b></div>
+                    <hr>
+                </ul>
+            </div>
+        </div>
+
+    
+    <ng-template #elseBlock >
+            <div class = "mainHolder">
+            <div  class = "personBox">
+               <h2 class = "h2">Company</h2>
+               <h3>Company Information</h3>
+                <div><span class = "labelSpan">Name:</span><b> {{single.name}}</b></div>
+                <div><span class = "labelSpan">Industry:</span> <b> {{single.industry}}</b></div>
+            </div>
+            
+            <div class = "personBox">
+                <h3>Employees</h3>
+                <ul class = "noMargin" *ngFor="let details of single.nested_array">
+                    <div><span class = "labelSpan">Employee Name:</span><b> {{details.name}}</b></div>
+                    <div><span class = "labelSpan">Position:</span><b> {{details.position}}</b></div>
+                    <hr>
+                </ul>
+            </div>
+
+        </div>
+    </ng-template>
+</mat-card>  
+
+  
+
+
+

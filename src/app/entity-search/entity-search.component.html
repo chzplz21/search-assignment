@@ -1,15 +1,23 @@
 <mat-card class = "center">
   <div id="search-component">
       <mat-form-field>
-       <input matInput autofocus [matAutocomplete]="auto" placeholder = "Type name of Employee" autocomplete="off" #searchBox id="search-box" (input)="search(searchBox.value)" />
+       <input matInput autofocus [matAutocomplete]="auto" placeholder = "Type name of Entity" autocomplete="off" #searchBox id="search-box" (input)="search(searchBox.value)" />
       </mat-form-field>
 
       <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let employee of employees$ | async" (click)="onSelect(employee)" [class.selected]="employee === selectedEmployee" [value]="option">
-            {{employee.name}}
+          <mat-option *ngFor="let entity of matchedEntity$ | async" (click)="onSelect(entity)" [class.selected]="employee === selectedEmployee" [value]="option">
+            {{entity.name}}
           </mat-option>
       </mat-autocomplete>
   </div>
 </mat-card>
 
-<app-employee-detail [selectedEmployee]="selectedEmployee"></app-employee-detail>
+<div *ngFor="let single of matchedArray; index as i; first as isFirst">
+    <mat-card class = "entityTitle" *ngIf="isFirst; else elseBlock">Searched Entity</mat-card>
+    <ng-template #elseBlock ><mat-card class = "entityTitle">Associated Entity</mat-card></ng-template >
+    <app-entity-detail  [single] = "single"></app-entity-detail>            
+</div>
+
+<!--
+<app-employee-detail  [matchedArray]></app-employee-detail>
+-->

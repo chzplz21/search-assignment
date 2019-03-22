@@ -1,12 +1,20 @@
 .blue {
     font-size: 0;
     color: #2ECC40;
+    padding-top: 0;
+    padding-bottom: 0;
 } 
+
+.mainHolder {
+
+    
+}
+
 
 .personBox {
     display: inline-block;
+    font-size: 12px;
     width: 50%;
-    font-size: 16px;
     vertical-align: top;
     
 }
@@ -22,12 +30,15 @@
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .labelSpan, mat-icon {
     color: #3F51B5;
 }
+
+
+
 
 
 
