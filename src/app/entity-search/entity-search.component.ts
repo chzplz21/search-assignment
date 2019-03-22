@@ -77,8 +77,7 @@ export class EntitySearchComponent implements OnInit {
      
   }
 
-  //Handles selection of entity.
-  
+  //Handles selection of entity. Responds with array two associated json objects 
   onSelect(entity: Entity): void {
     
     this.searchBox.nativeElement.value = entity.name;
