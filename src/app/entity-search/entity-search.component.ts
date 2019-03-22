@@ -77,6 +77,7 @@ export class EntitySearchComponent implements OnInit {
     for (let i of this.entities) {
       let nameOfEntityPartial = i.name.slice(0, term.length);
       nameOfEntityPartial = nameOfEntityPartial.toLowerCase();
+      term = term.toLowerCase();
       //if search term matches first letters of name of entity
       if (term == nameOfEntityPartial) {
         let arrayTemp = new Array();
@@ -89,17 +90,16 @@ export class EntitySearchComponent implements OnInit {
      
   }
 
-  //Handles selection of employee.
-  //selectedEmployee property imported into employee-detail
+  //Handles selection of entity.
   
   onSelect(entity: Entity): void {
     
+    this.searchBox.nativeElement.value = entity.name;
     let tempArray = new Array();
     this.matchedArray = [];
+    //First, pushes in searched for entity
     this.matchedArray.push(entity);
    
-    //tempArray.push(entity.nested_array[0].name, entity.nested_array[1].name);
-
    //Property name of nested array, either "company_array", or "employee_array" depending
     tempArray.push(Object.values(entity)[3][0].name, Object.values(entity)[3][1].name);
 
@@ -107,19 +107,20 @@ export class EntitySearchComponent implements OnInit {
     //of another entity
     for (let i of this.entities) {
       if (tempArray.includes(i.name)) {
+        //Second, pushes into associated entity
         this.matchedArray.push(i);
       }
     }
 
-    console.log(this.matchedArray);
+   
 
     
     
    
    
     
-    //sets input box value with selected name
-    //this.searchBox.nativeElement.value = employee.name;
+ 
+   
   
   }
 

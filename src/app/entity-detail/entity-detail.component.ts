@@ -3,11 +3,11 @@ import { Entity } from '../entity';
 
 
 @Component({
-  selector: 'app-employee-detail',
-  templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.css']
+  selector: 'app-entity-detail',
+  templateUrl: './entity-detail.component.html',
+  styleUrls: ['./entity-detail.component.css']
 })
-export class EmployeeDetailComponent implements OnInit {
+export class EntityDetailComponent implements OnInit {
   //selectedEmployee from entity-search component
  
 

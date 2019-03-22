@@ -1,7 +1,7 @@
 <mat-card class = "center">
   <div id="search-component">
       <mat-form-field>
-       <input matInput autofocus [matAutocomplete]="auto" placeholder = "Type name of Employee" autocomplete="off" #searchBox id="search-box" (input)="search(searchBox.value)" />
+       <input matInput autofocus [matAutocomplete]="auto" placeholder = "Type name of Entity" autocomplete="off" #searchBox id="search-box" (input)="search(searchBox.value)" />
       </mat-form-field>
 
       <mat-autocomplete #auto="matAutocomplete">
@@ -15,7 +15,7 @@
 <div *ngFor="let single of matchedArray; index as i; first as isFirst">
     <mat-card class = "entityTitle" *ngIf="isFirst; else elseBlock">Searched Entity</mat-card>
     <ng-template #elseBlock ><mat-card class = "entityTitle">Associated Entity</mat-card></ng-template >
-    <app-employee-detail  [single] = "single"></app-employee-detail>            
+    <app-entity-detail  [single] = "single"></app-entity-detail>            
 </div>
 
 <!--
