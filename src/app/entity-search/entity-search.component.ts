@@ -111,6 +111,8 @@ export class EntitySearchComponent implements OnInit {
       }
     }
 
+    console.log(this.matchedArray);
+
     
     
    

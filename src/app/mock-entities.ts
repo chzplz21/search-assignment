@@ -26,8 +26,8 @@ export const ENTITIES: any[] = [
     "nested_array": [
   
         {
-           "name": " Steve ",
-           "position": " Engineer "
+           "name": "Steve",
+           "position": "Engineer"
   
        },
   
@@ -39,6 +39,46 @@ export const ENTITIES: any[] = [
   
     ]
   
-  }
+  },
+  { 
+    "name":"Mary",
+    "type": "Employee",
+    "position": "Manager",
+    "nested_array": [
+      {
+          "name": "Fedex",
+          "industry": "Shipping"
+          
+      },
+          {
+          "name": "UPS",
+          "industry": "Shipping"
+          
+      }
+      
+    ]
+},
+{
+  "name": "Fedex", 
+  "type": "Company",
+  "industry": "Shipping",
+  "nested_array": [
+
+      {
+         "name": "Mary",
+         "position": "Manager"
+
+     },
+
+     {
+        "name": "Stan Marsh",
+        "position": "CEO"
+
+     }
+
+  ]
+
+}
+
   
 ];

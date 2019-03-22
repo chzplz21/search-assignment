@@ -12,8 +12,10 @@
   </div>
 </mat-card>
 
-<div *ngFor="let single of matchedArray">
-        <app-employee-detail  [single] = "single"></app-employee-detail>            
+<div *ngFor="let single of matchedArray; index as i; first as isFirst">
+    <mat-card class = "entityTitle" *ngIf="isFirst; else elseBlock">Searched Entity</mat-card>
+    <ng-template #elseBlock ><mat-card class = "entityTitle">Associated Entity</mat-card></ng-template >
+    <app-employee-detail  [single] = "single"></app-employee-detail>            
 </div>
 
 <!--
