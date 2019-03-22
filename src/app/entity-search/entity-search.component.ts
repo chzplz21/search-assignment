@@ -19,23 +19,10 @@ export class EntitySearchComponent implements OnInit {
   
 
   entities = ENTITIES;
-
   entityObject = Entity;
-  
   matchedEntity$: Observable<any[]>; 
-  
-  //Contains associated entities after entity is selected
-  //matchedArray: Array<Entity>;
-  //matchedArray =  Array<Entity>();
-
-  //matchedBay = new Array();
-  
- // matchedArray =  Array<Entity>();
-
   matchedArray = new Array();
-
   private searchTerms = new Subject<string>();
-
   selectedEmployee: object;
   //DOM element searchBox
   @ViewChild('searchBox') private searchBox;
@@ -110,17 +97,7 @@ export class EntitySearchComponent implements OnInit {
         //Second, pushes into associated entity
         this.matchedArray.push(i);
       }
-    }
-
-   
-
-    
-    
-   
-   
-    
- 
-   
+    }  
   
   }
 

@@ -8,23 +8,11 @@ import { Entity } from '../entity';
   styleUrls: ['./entity-detail.component.css']
 })
 export class EntityDetailComponent implements OnInit {
-  //selectedEmployee from entity-search component
+  
  
-
-
   @Input() single: Entity;
 
-/*
-  @Input() entity: Entity;
-  
-  bame: Array<Entity>;
- 
-  @Input()
-  set matchedArray(name) {
-    this.bame = name;
-    console.log(this.bame);
-  }
-*/
+
   constructor() { 
    
   }
